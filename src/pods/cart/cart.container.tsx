@@ -1,17 +1,16 @@
 import { useContext } from "react";
-import { MyContext } from "./core/index";
+import { MyContext } from "../../core/context/index";
 
-export function MyComponent() {
+export function Cart() {
   const { Kitties, Puppies } = useContext(MyContext);
 
   return (
     <div>
+      <h1>kart</h1>
       <h2>Kitties:</h2>
       <ul>
         {Kitties.map((kitty) => (
-          <li key={kitty.id}>{kitty.title}
-          <img src={kitty.picUrl} alt="laksd"  />
-          </li>
+          <li key={kitty.id}>{kitty.title}</li>
         ))}
       </ul>
 
@@ -24,4 +23,3 @@ export function MyComponent() {
     </div>
   );
 }
-

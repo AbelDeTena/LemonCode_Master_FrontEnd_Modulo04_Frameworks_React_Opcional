@@ -1,0 +1,15 @@
+.containerStyle {
+  background-color: lightgreen;
+  display: flex;
+}
+
+.divStyle1 {
+  background: lawngreen;
+  width: 80%;
+
+}
+
+.divStyle2 {
+  background: lightcoral;
+  width: 500px;
+}
