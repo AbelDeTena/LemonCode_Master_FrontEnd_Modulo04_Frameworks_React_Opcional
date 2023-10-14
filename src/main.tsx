@@ -1,13 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import {MyContextProvider} from "./core/index";
-import {MyComponent} from "./mycomponent"
+import { MyContextProvider } from "./core/index";
+import { MainLayout } from "./layout/index";
+import { Header } from "./common/index";
+import { AppRoutes } from "./core/index";
 
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <MyContextProvider>
-    <h1> hola </h1>
-    <MyComponent></MyComponent>
-  </MyContextProvider>,
-)
+    <Router>
+      <MainLayout>
+        <Header />
+        <AppRoutes />
+      </MainLayout>
+    </Router>
+  </MyContextProvider>
+);
