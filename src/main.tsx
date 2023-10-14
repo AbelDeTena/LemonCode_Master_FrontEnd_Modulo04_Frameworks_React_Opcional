@@ -1,10 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+import {MyContextProvider} from "./core/index";
+import {MyComponent} from "./mycomponent"
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  <MyContextProvider>
     <h1> hola </h1>
-  </React.StrictMode>,
+    <MyComponent></MyComponent>
+  </MyContextProvider>,
 )
