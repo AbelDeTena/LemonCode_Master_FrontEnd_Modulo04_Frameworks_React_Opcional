@@ -1,1 +1,2 @@
-export * from "./mainScene"
+export * from "./kittiesScene"
+export * from "./puppiesScene"

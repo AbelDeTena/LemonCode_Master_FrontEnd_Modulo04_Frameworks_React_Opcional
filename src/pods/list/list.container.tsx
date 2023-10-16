@@ -1,11 +1,16 @@
 import { useContext } from "react";
 import { MyContext } from "../../core/context/index";
+import { Link } from 'react-router-dom';
+import {switchRoutes} from "../../core/index"
 
 export function List() {
-  const { Kitties, Puppies } = useContext(MyContext);
+  const { Kitties } = useContext(MyContext);
 
   return (
     <div>
+       <Link to={switchRoutes.puppies}>
+      <button>Navegar a MyComponent2</button>
+    </Link>
       <h2>Kitties:</h2>
       <ul>
         {Kitties.map((kitty) => (
@@ -13,15 +18,8 @@ export function List() {
           <img src={kitty.picUrl} alt="laksd"  />
           </li>
         ))}
-      </ul>
-
-      <h2>Puppies:</h2>
-      <ul>
-        {Puppies.map((puppy) => (
-          <li key={puppy.id}>{puppy.title}</li>
-        ))}
-      </ul>
-    </div>
+      </ul>      
+    </div>    
   );
 }
 
