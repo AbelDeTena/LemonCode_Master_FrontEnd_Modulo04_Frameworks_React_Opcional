@@ -2,7 +2,7 @@ import { ReactNode, createContext } from "react";
 import { Kitties, Puppies } from "../../data/index";
 import { PictureInfo } from "../../data/index";
 
-interface MyContextData {
+export interface MyContextData {
   Kitties: PictureInfo[]; 
   Puppies: PictureInfo[]; 
 }

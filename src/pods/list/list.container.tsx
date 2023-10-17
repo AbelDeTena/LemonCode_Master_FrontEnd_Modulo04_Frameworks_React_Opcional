@@ -1,25 +1,21 @@
-import { useContext } from "react";
-import { MyContext } from "../../core/context/index";
-import { Link } from 'react-router-dom';
-import {switchRoutes} from "../../core/index"
+import { PictureInfo } from "../../data/index";
 
-export function List() {
-  const { Kitties } = useContext(MyContext);
-
-  return (
-    <div>
-       <Link to={switchRoutes.puppies}>
-      <button>Navegar a MyComponent2</button>
-    </Link>
-      <h2>Kitties:</h2>
-      <ul>
-        {Kitties.map((kitty) => (
-          <li key={kitty.id}>{kitty.title}
-          <img src={kitty.picUrl} alt="laksd"  />
-          </li>
-        ))}
-      </ul>      
-    </div>    
-  );
+interface ListProps {
+  details: PictureInfo[];
 }
 
+export function List({ details }: ListProps) {
+  return (
+    <div>
+      <h2>Select your favorites</h2>
+      <ul>
+        {details.map((detail) => (
+          <li key={detail.id}>
+            {detail.title}
+            <img src={detail.picUrl} alt="laksd" />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
