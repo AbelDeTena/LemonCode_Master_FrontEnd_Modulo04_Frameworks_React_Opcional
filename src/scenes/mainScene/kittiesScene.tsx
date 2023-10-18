@@ -1,5 +1,5 @@
 import { ListLayout } from "../../layout/index";
-import { List, Cart } from "../../pods/index";
+import { List } from "../../pods/index";
 import { MyContext } from "../../core/context/index";
 import { useContext } from "react";
 import { MyContextData } from "../../core/index";
@@ -9,8 +9,7 @@ export const KittiesScene: React.FC = () => {
 
   return (
     <ListLayout>
-      <List details={context.Kitties} />
-      <Cart />
+      <List details={context.Kitties} />      
     </ListLayout>
   );
 };
