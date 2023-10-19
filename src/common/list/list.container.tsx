@@ -1,8 +1,8 @@
-import { PictureInfo } from "../../data/index";
-import { Picture } from "../../common/index";
+import { FromApiToVm } from "../../pods/kitties/component/index";
+import { Picture } from "../index";
 
 interface ListProps {
-  details: PictureInfo[];
+  details: FromApiToVm [],  
 }
 
 export function List({ details }: ListProps) {
@@ -11,7 +11,7 @@ export function List({ details }: ListProps) {
       <h2>Select your favorites</h2>
       <div className="pictures-list">
         {details.map((detail) => (
-          <Picture pictureInfo={detail} />
+          <Picture key={detail.id} pictureInfo={detail} />
         ))}
       </div>
     </>

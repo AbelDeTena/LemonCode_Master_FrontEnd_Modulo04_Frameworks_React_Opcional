@@ -1,9 +1,8 @@
-import React from "react"; 
-import {PictureInfo} from "../../data/index"
-
+import React from "react";
+import { FromApiToVm } from "../../pods/kitties/component/index";
 
 interface PictureProps {
-  pictureInfo: PictureInfo;
+  pictureInfo: FromApiToVm;
 }
 
 export const Picture: React.FC<PictureProps> = ({ pictureInfo }) => {
@@ -12,10 +11,8 @@ export const Picture: React.FC<PictureProps> = ({ pictureInfo }) => {
       <picture>
         <img src={pictureInfo.picUrl} alt={pictureInfo.title} />
       </picture>
-        <h2>{pictureInfo.title}</h2>
-        <input type="checkbox" name={pictureInfo.title} id={pictureInfo.id} />
+      <h2>{pictureInfo.title}</h2>
+      <input type="checkbox" name={pictureInfo.title} id={pictureInfo.id} checked={pictureInfo.selected}/>
     </div>
   );
-}
-
-
+};
