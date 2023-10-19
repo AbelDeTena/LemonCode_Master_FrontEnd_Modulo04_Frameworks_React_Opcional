@@ -1,5 +1,5 @@
 export interface FromApiToVm {
-  id: string;
+  id: number;
   picUrl: string;
   title: string;
   selected: boolean;

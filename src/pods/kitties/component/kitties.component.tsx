@@ -19,7 +19,7 @@ export const KittiesComponent = ({
         addId={addId}
         removeId={removeId}
       />
-      {console.log(filterKitties)}
+      {console.log("listado de gatitos",filterKitties)}
     </>
   );
 };

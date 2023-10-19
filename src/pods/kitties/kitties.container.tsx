@@ -4,26 +4,40 @@ import { miKittiesList } from "./component/index";
 
 export const Kitties = () => {
   const kitties = miKittiesList;
-  const [idArray, setIdArray] = useState<number[]>([]);
   const [filterKitties, setFilterKitties] = useState<FromApiToVm[]>([]);
 
+  //contexto
+  const [idArray, setIdArray] = useState<number[]>([]);
+  const addId = (id: number) => {
+    console.log("antes", idArray);
+    setIdArray((prevIdArray) => {
+      const noseque = [...prevIdArray, id];
+      console.log({ noseque });
+      return noseque;
+    });
+    console.log(idArray);
+  };
+
+  const removeId = (id: number) => {
+    console.log("antes", idArray);
+    setIdArray((prevIdArray) => prevIdArray.filter((item) => item !== id));
+    console.log(idArray);
+  };
+  //fin del contexto
+
   useEffect(() => {
-    const updatedFilterKitties = kitties.map((cat) => ({
-      ...cat,
-      selected: cat.id in idArray,
-    }));
+    const updatedFilterKitties = kitties.map((cat) => {
+      //error en la condicion includes - in
+      console.log(idArray.includes(cat.id));
+      return {
+        ...cat,
+        selected: idArray.includes(cat.id),
+      };
+    });
     console.log("Updated Filter Kitties:", updatedFilterKitties);
 
     setFilterKitties(updatedFilterKitties);
   }, [idArray, kitties]);
-
-  const addId = (id: number) => {
-    setIdArray((prevIdArray) => [...prevIdArray, id]);
-  };
-
-  const removeId = (id: number) => {
-    setIdArray((prevIdArray) => prevIdArray.filter((item) => item !== id));
-  };
 
   return (
     <>

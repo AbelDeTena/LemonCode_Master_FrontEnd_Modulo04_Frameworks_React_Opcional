@@ -28,13 +28,11 @@ export function List({ details, addId, removeId }: ListProps) {
             <input
               type="checkbox"
               name={detail.title}
-              id={detail.id}
+              id={detail.id.toString()}
               checked={detail.selected}
-              onChange={(e) => {
-                handleCheckboxChange(Number(detail.id), e.target.checked);
-                console.log(Number(detail.id));
-                console.log(e.target.checked);
-                console.log(detail.selected);
+              //error en el parametro e.target.checked - detail.selected
+              onChange={() => {
+                handleCheckboxChange(detail.id, detail.selected);              
               }}
             />
           </div>
