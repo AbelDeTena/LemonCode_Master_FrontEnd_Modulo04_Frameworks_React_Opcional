@@ -3,5 +3,5 @@ import { FromApiToVm } from "./index";
 
 export const MapperKitties = (prop:PictureInfo):FromApiToVm => ({
 ...prop,
-selected: true,
+selected: false,
 });

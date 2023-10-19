@@ -7,6 +7,7 @@ export interface MyContextData {
   Puppies: PictureInfo[]; 
 }
 
+
 interface MyContextProviderProps {
   children: ReactNode;
 }
