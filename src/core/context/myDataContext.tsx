@@ -4,12 +4,14 @@ interface IdContextType {
   idArray: number[];
   addId: (id: number) => void;
   removeId: (id: number) => void;
+  clear: ()=> void;
 }
 
 export const MyContext = createContext<IdContextType>({
   idArray: [],
   addId: () => {},
   removeId: () => {},
+  clear: ()=>{}
 });
 
 interface MyContextProviderProps {
@@ -27,8 +29,13 @@ export function MyContextProvider({ children }: MyContextProviderProps) {
     setIdArray((prevIdArray) => prevIdArray.filter((item) => item !== id));
   };
 
+  const clear = () => {
+    setIdArray([])
+  }
+
+
   return (
-    <MyContext.Provider value={{ idArray, addId, removeId }}>
+    <MyContext.Provider value={{ idArray, addId, removeId, clear }}>
       {children}
     </MyContext.Provider>
   );

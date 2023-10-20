@@ -9,12 +9,12 @@ import { Cart } from "./pods/index";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <MyContextProvider>
-    <Router>
-      <MainLayout>
+    <MainLayout>
+      <Router>
         <Header />
         <AppRoutes />
-        <Cart />
-      </MainLayout>
-    </Router>
+      </Router>
+      <Cart />
+    </MainLayout>
   </MyContextProvider>
 );

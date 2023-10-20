@@ -1,2 +1,3 @@
-export * from "./header/index";
+export * from "./header";
 export * from "./list";
+export * from "./modal"
