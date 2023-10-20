@@ -1,27 +1,35 @@
-import { ReactNode, createContext } from "react";
-import { Kitties, Puppies } from "../../data/index";
-import { PictureInfo } from "../../data/index";
+import { createContext, ReactNode, useState } from "react";
 
-export interface MyContextData {
-  Kitties: PictureInfo[]; 
-  Puppies: PictureInfo[]; 
+interface IdContextType {
+  idArray: number[];
+  addId: (id: number) => void;
+  removeId: (id: number) => void;
 }
 
+export const MyContext = createContext<IdContextType>({
+  idArray: [],
+  addId: () => {},
+  removeId: () => {},
+});
 
 interface MyContextProviderProps {
   children: ReactNode;
 }
 
-export const MyContext = createContext<MyContextData>({
-  Kitties,
-  Puppies,
-});
-
 export function MyContextProvider({ children }: MyContextProviderProps) {
-  const value: MyContextData = {
-    Kitties,
-    Puppies,
+  const [idArray, setIdArray] = useState<number[]>([]);
+
+  const addId = (id: number) => {
+    setIdArray((prevIdArray) => [...prevIdArray, id]);
   };
 
-  return <MyContext.Provider value={value}>{children}</MyContext.Provider>;
+  const removeId = (id: number) => {
+    setIdArray((prevIdArray) => prevIdArray.filter((item) => item !== id));
+  };
+
+  return (
+    <MyContext.Provider value={{ idArray, addId, removeId }}>
+      {children}
+    </MyContext.Provider>
+  );
 }

@@ -14,12 +14,7 @@ export const KittiesComponent = ({
 }: KittiesComponentProps) => {
   return (
     <>
-       <List
-        details={filterKitties}
-        addId={addId}
-        removeId={removeId}
-      />
-      {console.log("listado de gatitos",filterKitties)}
+      <List details={filterKitties} addId={addId} removeId={removeId} />
     </>
   );
 };

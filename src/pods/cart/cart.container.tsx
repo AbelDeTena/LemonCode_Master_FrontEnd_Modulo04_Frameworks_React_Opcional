@@ -2,24 +2,14 @@ import { useContext } from "react";
 import { MyContext } from "../../core/context/index";
 
 export function Cart() {
-  const { Kitties, Puppies } = useContext(MyContext);
+  const { idArray } = useContext(MyContext);
 
   return (
     <div>
-      <h1>kart</h1>
-      <h2>Kitties:</h2>
-      <ul>
-        {Kitties.map((kitty) => (
-          <li key={kitty.id}>{kitty.title}</li>
-        ))}
-      </ul>
-
-      <h2>Puppies:</h2>
-      <ul>
-        {Puppies.map((puppy) => (
-          <li key={puppy.id}>{puppy.title}</li>
-        ))}
-      </ul>
+      <h1>Cart</h1>
+      {idArray.map((id) => (
+        <h2 key={id}>{id}</h2>
+      ))}
     </div>
   );
 }

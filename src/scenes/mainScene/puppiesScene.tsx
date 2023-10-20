@@ -1,10 +1,10 @@
 import { ListLayout } from "../../layout/index";
-import { Kitties } from "../../pods/index";
+import { Puppies } from "../../pods/index";
 
 export const PuppiesScene: React.FC = () => {
   return (
     <ListLayout>
-      <Kitties />
+      <Puppies />
     </ListLayout>
   );
 };

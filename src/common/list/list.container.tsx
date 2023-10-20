@@ -30,9 +30,8 @@ export function List({ details, addId, removeId }: ListProps) {
               name={detail.title}
               id={detail.id.toString()}
               checked={detail.selected}
-              //error en el parametro e.target.checked - detail.selected
               onChange={() => {
-                handleCheckboxChange(detail.id, detail.selected);              
+                handleCheckboxChange(detail.id, detail.selected);
               }}
             />
           </div>
