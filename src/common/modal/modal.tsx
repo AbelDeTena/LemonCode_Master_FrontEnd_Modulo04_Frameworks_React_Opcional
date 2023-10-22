@@ -1,4 +1,8 @@
 import React from "react";
+import Modal from "@mui/material/Modal";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 interface CheckoutModalProps {
   visible: boolean;
@@ -11,14 +15,29 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ visible, onClose }
   }
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <h1>Checkout</h1>        
-        <button onClick={onClose}>Cerrar</button>
-        <button>Realizar Pedido</button>
-      </div>
-    </div>
+    <Modal open={visible} onClose={onClose}>
+      <Paper
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 400,
+          bgcolor: "background.paper",
+          boxShadow: 24,
+          p: 4,
+        }}
+      >
+        <Typography variant="h6" component="h2">
+          Checkout
+        </Typography>
+        <Button onClick={onClose} variant="contained">
+          Cerrar
+        </Button>
+        <Button variant="contained" color="primary">
+          Realizar Pedido
+        </Button>
+      </Paper>
+    </Modal>
   );
 };
-
-

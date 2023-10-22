@@ -1,26 +1,17 @@
-.containerStyle {
-  background-color: lightgreen;
-  display: flex;
-}
-
-.divStyle1 {
-  background: lawngreen;
-  width: 80%;   
-}
-
-.divStyle2 {
-  background: lightcoral;
-  width:10%;
-}
-
 img {
-  width: 150px;
+  width: 120px;
+  height: 80px;
+  object-fit: "cover";
 }
 
-.picture-container{
+.picture-container {
   width: 200px;
 }
 
 .pictures-list {
-display: flex;
+  display: flex;
+}
+
+.containerStyle {
+  display: flex;
 }

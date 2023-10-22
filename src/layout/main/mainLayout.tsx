@@ -6,12 +6,12 @@ interface ChildrenComponentProps {
 }
 
 export const MainLayout: React.FC<ChildrenComponentProps> = ({ children }) => {
-  const [header, main] = children;
+  const [header, cart] = children;
 
   return (
     <div className="container">
-      <div className="div1">{header}</div>
-      <div className="div2">{main}</div>
+      <div className="header">{header}</div>
+      <div className="cart">{cart}</div>
     </div>
   );
 };

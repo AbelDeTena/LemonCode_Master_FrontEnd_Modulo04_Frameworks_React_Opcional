@@ -1,32 +1,23 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { switchRoutes } from "../../core/index";
+import { Button } from "@mui/material";
 
 export const Header: React.FC = () => {
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <IconButton
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-        >
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" component="div">
-          Laboratorio React Opcional
-        </Typography>
+    <AppBar position="static" color="primary">
+      <Toolbar style={{ gap: 20 }}>
         <Link to={switchRoutes.kitties}>
-          <button>Kitties</button>
+          <Button variant="contained" color="secondary">
+            Kitties
+          </Button>
         </Link>
         <Link to={switchRoutes.puppies}>
-          <button>Puppies</button>
+          <Button variant="contained" color="secondary">
+            Puppies
+          </Button>
         </Link>
       </Toolbar>
     </AppBar>

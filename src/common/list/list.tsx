@@ -1,3 +1,4 @@
+import { Checkbox, Container, Typography } from "@mui/material";
 import { FromApiToVm } from "../../pods/kitties/component";
 
 interface ListProps {
@@ -16,17 +17,16 @@ export function List({ details, addId, removeId }: ListProps) {
   };
 
   return (
-    <>
-      <h2>Select your favorites</h2>
+    <Container>
+      <Typography variant="h4">Select your favorites</Typography>
       <div className="pictures-list">
         {details.map((detail) => (
           <div className="picture-container" key={detail.id}>
             <picture>
               <img src={detail.picUrl} alt={detail.title} />
             </picture>
-            <h2>{detail.title}</h2>
-            <input
-              type="checkbox"
+            <Typography variant="h6">{detail.title}</Typography>
+            <Checkbox
               name={detail.title}
               id={detail.id.toString()}
               checked={detail.selected}
@@ -37,6 +37,6 @@ export function List({ details, addId, removeId }: ListProps) {
           </div>
         ))}
       </div>
-    </>
+    </Container>
   );
 }
