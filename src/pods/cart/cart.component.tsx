@@ -29,7 +29,7 @@ export function CartComponent({
 }: CartComponentProps) {
   return (
     <Container className={classes.container}>
-      <ShoppingCartIcon        
+      <ShoppingCartIcon
         fontSize="large"
         className={classes.cartIcon}
         onClick={toggleCartVisibility}
@@ -49,7 +49,7 @@ export function CartComponent({
                 <Typography variant="h6">{pet.title}</Typography>
               </div>
               <div>
-                <DeleteIcon                  
+                <DeleteIcon
                   onClick={() => removeId(Number(pet.id))}
                   className={classes.cartIcon}
                 />
@@ -60,12 +60,12 @@ export function CartComponent({
           {filterCart.length > 0 && (
             <div className={classes.cartButtons}>
               <Button
-                variant="contained"                
+                variant="contained"
                 onClick={() => setIsModalVisible(true)}
               >
                 Ir al Checkout
               </Button>
-              <Button variant="contained" onClick={clear}>
+              <Button variant="contained" onClick={clear} color="secondary">
                 Eliminar todos
               </Button>
             </div>
@@ -76,6 +76,7 @@ export function CartComponent({
       <CheckoutModal
         visible={isModalVisible}
         onClose={() => setIsModalVisible(false)}
+        filterCart={filterCart}
       />
     </Container>
   );

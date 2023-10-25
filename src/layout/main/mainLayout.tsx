@@ -8,7 +8,7 @@ interface ChildrenComponentProps {
 export const MainLayout: React.FC<ChildrenComponentProps> = ({ children }) => {
   const [header, cart] = children;
 
-  return (
+  return (    
     <div className="container">
       <div className="header">{header}</div>
       <div className="cart">{cart}</div>

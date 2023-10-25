@@ -1,10 +1,11 @@
 import { css } from "@emotion/css";
-import { theme } from "../../core/theme";
+import { theme } from "../../core";
 
 export const container = css`
   background-color: ${theme.palette.primary[50]};
   border: 2px solid ${theme.palette.dark[400]};
-  padding: ${theme.spacing(3)};  
+  padding: ${theme.spacing(4)};
+  border-radius: 0px 0px 0px 15px;
 `;
 
 export const cartIcon = css`
@@ -18,6 +19,8 @@ export const cartItem = css`
   align-items: center;
   background-color: ${theme.palette.secondary[200]};
   margin-bottom: ${theme.spacing(3)};
+  border-radius: 5px;
+  overflow: hidden;
 `;
 
 export const cartImage = css`
@@ -32,5 +35,5 @@ export const cartItemDetails = css`
 `;
 
 export const cartButtons = css`
-  gap: ${theme.spacing(1)};
+  gap: ${theme.spacing(3)};
 `;

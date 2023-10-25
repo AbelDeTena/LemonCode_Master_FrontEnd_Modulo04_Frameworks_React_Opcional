@@ -7,11 +7,20 @@ import Button from "@mui/material/Button";
 interface CheckoutModalProps {
   visible: boolean;
   onClose: () => void;
+  filterCart: {
+    id: string;
+    picUrl: string;
+    title: string;
+  }[];
 }
 
-const sendOrder = () => alert("Pedido realizado")
+const sendOrder = () => alert("Pedido realizado");
 
-export const CheckoutModal: React.FC<CheckoutModalProps> = ({ visible, onClose }) => {
+export const CheckoutModal: React.FC<CheckoutModalProps> = ({
+  visible,
+  onClose,
+  filterCart,
+}) => {
   if (!visible) {
     return null;
   }
@@ -33,11 +42,17 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ visible, onClose }
         <Typography variant="h6" component="h2">
           Checkout
         </Typography>
-        <Button onClick={onClose} variant="contained">
-          Cerrar
-        </Button>
+        <p>Esta a punto de realizar el siguiente pedido:</p>
+        {filterCart.map((pet) => (
+          <p>{pet.title}</p>
+        ))}
+
         <Button variant="contained" color="primary" onClick={sendOrder}>
           Realizar Pedido
+        </Button>
+
+        <Button onClick={onClose} variant="contained">
+          Cerrar
         </Button>
       </Paper>
     </Modal>
