@@ -1,4 +1,5 @@
-export const MockData = {
+import {Data} from "./index"
+export const MockData:Data = {
   kitties: [
     {
       id: "1",
