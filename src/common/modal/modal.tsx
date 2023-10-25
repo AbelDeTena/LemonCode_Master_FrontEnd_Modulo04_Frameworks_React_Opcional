@@ -9,6 +9,8 @@ interface CheckoutModalProps {
   onClose: () => void;
 }
 
+const sendOrder = () => alert("Pedido realizado")
+
 export const CheckoutModal: React.FC<CheckoutModalProps> = ({ visible, onClose }) => {
   if (!visible) {
     return null;
@@ -34,7 +36,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ visible, onClose }
         <Button onClick={onClose} variant="contained">
           Cerrar
         </Button>
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" onClick={sendOrder}>
           Realizar Pedido
         </Button>
       </Paper>
