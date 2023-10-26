@@ -33,6 +33,7 @@ export function CartComponent({
         fontSize="large"
         className={classes.cartIcon}
         onClick={toggleCartVisibility}
+        color="success"
       />
 
       {isCartVisible && (
@@ -52,6 +53,7 @@ export function CartComponent({
                 <DeleteIcon
                   onClick={() => removeId(Number(pet.id))}
                   className={classes.cartIcon}
+                  color="error"
                 />
               </div>
             </div>
@@ -63,10 +65,10 @@ export function CartComponent({
                 variant="contained"
                 onClick={() => setIsModalVisible(true)}
               >
-                Ir al Checkout
+                Go to Checkout
               </Button>
-              <Button variant="contained" onClick={clear} color="secondary">
-                Eliminar todos
+              <Button variant="contained" onClick={clear} color="error">
+                Delete All
               </Button>
             </div>
           )}

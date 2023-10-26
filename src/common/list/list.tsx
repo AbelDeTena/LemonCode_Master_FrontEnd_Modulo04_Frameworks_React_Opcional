@@ -1,5 +1,6 @@
-import { Checkbox, Container, Typography } from "@mui/material";
+import { Checkbox, Typography } from "@mui/material";
 import { FromApiToVm } from "../../pods/kitties/component";
+import * as classes from "./list.style";
 
 interface ListProps {
   details: FromApiToVm[];
@@ -17,26 +18,29 @@ export function List({ details, addId, removeId }: ListProps) {
   };
 
   return (
-    <Container>
-      <Typography variant="h4">Select your favorites</Typography>
-      <div className="pictures-list">
+    <div className={classes.container}>
+      <Typography variant="h4">Choose your new friend:</Typography>
+      <div className={classes.petsContainer}>
         {details.map((detail) => (
-          <div className="picture-container" key={detail.id}>
-            <picture>
-              <img src={detail.picUrl} alt={detail.title} />
+          <div className={classes.pet} key={detail.id}>
+            <picture className={classes.img}>
+              <img className={classes.img} src={detail.picUrl} alt={detail.title} />
             </picture>
             <Typography variant="h6">{detail.title}</Typography>
-            <Checkbox
-              name={detail.title}
-              id={detail.id.toString()}
-              checked={detail.selected}
-              onChange={() => {
-                handleCheckboxChange(detail.id, detail.selected);
-              }}
-            />
+            <div>
+              <span>Add to Cart</span>
+              <Checkbox
+                name={detail.title}
+                id={detail.id.toString()}
+                checked={detail.selected}
+                onChange={() => {
+                  handleCheckboxChange(detail.id, detail.selected);
+                }}
+              />
+            </div>
           </div>
         ))}
       </div>
-    </Container>
+    </div>
   );
 }

@@ -42,17 +42,17 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         <Typography variant="h6" component="h2">
           Checkout
         </Typography>
-        <p>Esta a punto de realizar el siguiente pedido:</p>
+        <p>You are about to place the following order:</p>
         {filterCart.map((pet) => (
           <p>{pet.title}</p>
         ))}
 
-        <Button variant="contained" color="primary" onClick={sendOrder}>
-          Realizar Pedido
+        <Button variant="contained" color="success" onClick={sendOrder} >
+          Place Order
         </Button>
 
         <Button onClick={onClose} variant="contained">
-          Cerrar
+          Close
         </Button>
       </Paper>
     </Modal>

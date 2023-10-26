@@ -1,17 +1,20 @@
 import React, { ReactNode } from "react";
-import "./main.css";
+import { Theme } from "../../core";
+import * as classes from "./main.style";
 
 interface ChildrenComponentProps {
   children: [ReactNode, ReactNode];
 }
 
 export const MainLayout: React.FC<ChildrenComponentProps> = ({ children }) => {
-  const [header, cart] = children;
+  const [left, right] = children;
 
-  return (    
-    <div className="container">
-      <div className="header">{header}</div>
-      <div className="cart">{cart}</div>
-    </div>
+  return (
+    <Theme>
+      <div className={classes.container}>
+        <div className={classes.left}>{left}</div>
+        <div className={classes.right}>{right}</div>
+      </div>
+    </Theme>
   );
 };
