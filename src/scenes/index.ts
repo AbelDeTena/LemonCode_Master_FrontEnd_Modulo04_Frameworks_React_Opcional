@@ -1,1 +1,2 @@
-export * from "./mainScene/index"
+export * from "./kittiesScene";
+export * from "./puppiesScene";

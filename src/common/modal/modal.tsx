@@ -44,7 +44,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         </Typography>
         <p>You are about to place the following order:</p>
         {filterCart.map((pet) => (
-          <p>{pet.title}</p>
+          <p key={pet.id}>{pet.title}</p>
         ))}
 
         <Button variant="contained" color="success" onClick={sendOrder} >
